@@ -119,7 +119,7 @@ if (isset($_POST["submit"])) {
                 <a class="nav-link" href="#">Gym Management System</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="joined.php">joined</a>
+                <a class="nav-link" href="join.php">join</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="index.html">Home</a>

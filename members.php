@@ -10,9 +10,11 @@ if (isset($_REQUEST["submit"])) {
     $dob = $_REQUEST["dob"];
     $phone = $_REQUEST["phone"];
     $coach = $_REQUEST["coach"];
+    $gender = $_REQUEST["gender"];
+    $address = $_REQUEST["address"];
     
 
-    $ins = "INSERT INTO member (id,name, date,dob,phone,coach) VALUES ('$id','$name','$date','$dob','$phone','$coach')";
+    $ins = "INSERT INTO member (id,name, date,dob,phone,coach,gender,address) VALUES ('$id','$name','$date','$dob','$phone','$coach','$gender','$address')";
         $query1 = mysqli_query($connection, $ins);
 }
 
@@ -29,7 +31,7 @@ if (isset($_REQUEST["submit"])) {
     <style>
   /* Styling for form */
   form {
-    margin: 120px;
+    margin: 60px;
   }
 
   .form-group {
@@ -94,15 +96,24 @@ if (isset($_REQUEST["submit"])) {
       <li class="nav-item">
         <a class="nav-link" href="Coach.php">Coach</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="members.php">Members</a>
-      </li>
+      <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMembers" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Members
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMembers">
+                    <a class="dropdown-item" href="member-details.php">View Members</a>
+                    <a class="dropdown-item" href="joined-details.php">View joined</a>
+                    
+                    <!-- Add more dropdown items as needed -->
+                </div>
+            </li>
       <li class="nav-item">
         <a class="nav-link" href="Receptionist.php">Receptionist</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="logout.php">logout</a>
       </li>
+      
     </ul>
   </div>
 </nav>
@@ -123,7 +134,7 @@ if (isset($_REQUEST["submit"])) {
   </div>
   <div class="form-group">
     <label for="inputAddress">Date of Joining</label>
-    <input type="text" name="date" class="form-control" id="inputAddress" placeholder="Date of Birth">
+    <input type="text" name="date" class="form-control" id="inputAddress" placeholder="Date of Joining">
   </div>
   <div class="form-group">
     <label for="inputAddress2">Date of Birth</label>
@@ -137,6 +148,14 @@ if (isset($_REQUEST["submit"])) {
     <label for="inputAddress2">Coach</label>
     <input type="text" name="coach" class="form-control" id="inputAddress2" placeholder="coach">
   </div>
+  <div class="form-group">
+    <label for="inputAddress2">Gender</label>
+    <input type="text" name="gender" class="form-control" id="inputAddress2" placeholder="Gender">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress2">Address</label>
+    <input type="text" name="address" class="form-control" id="inputAddress2" placeholder="Address">
+  </div>
   
   <button type="submit"  name= "submit" class="btn btn-primary">Save</button>
 </form>
@@ -148,5 +167,6 @@ if (isset($_REQUEST["submit"])) {
 <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
 </body>
 </html>

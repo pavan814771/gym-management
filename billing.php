@@ -84,9 +84,16 @@ if (isset($_REQUEST["submit"])) {
       <li class="nav-item active">
         <a class="nav-link" href="#">Gym Management System</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="billing.php">Billing</a>
-      </li>
+      <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMembers" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Billing
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMembers">
+                    <a class="dropdown-item" href="billing-details.php">View Bills</a>
+                    
+                    <!-- Add more dropdown items as needed -->
+                </div>
+            </li>
       <li class="nav-item">
         <a class="nav-link" href="coach.php">Coach</a>
       </li>

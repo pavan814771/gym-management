@@ -6,12 +6,13 @@ if (isset($_REQUEST["submit"])) {
     
     $id = $_REQUEST["id"];
     $name = $_REQUEST["name"];
-    $date = $_REQUEST["date"];
+    $dob = $_REQUEST["dob"];
+    $joindate = $_REQUEST["joindate"];
     $experience = $_REQUEST["experience"];
 
     
 
-    $ins = "INSERT INTO coach (id,name, date,experience) VALUES ('$id','$name','$date','$experience')";
+    $ins = "INSERT INTO coach (id,name, dob,joindate,experience) VALUES ('$id','$name','$dob','$joindate','$experience')";
         $query1 = mysqli_query($connection, $ins);
 
 }
@@ -90,9 +91,16 @@ if (isset($_REQUEST["submit"])) {
       <li class="nav-item">
         <a class="nav-link" href="billing.php">Billing</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="coach.php">Coach</a>
-      </li>
+      <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMembers" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Coach
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMembers">
+                    <a class="dropdown-item" href="coach-details.php">View Coach</a>
+                    
+                    <!-- Add more dropdown items as needed -->
+                </div>
+            </li>
       <li class="nav-item">
         <a class="nav-link" href="members.php">Members</a>
       </li>
@@ -122,7 +130,11 @@ if (isset($_REQUEST["submit"])) {
   </div>
   <div class="form-group">
     <label for="inputAddress">Date of Birth</label>
-    <input type="text" name="date" class="form-control" id="inputAddress" placeholder="Date of Birth">
+    <input type="text" name="dob" class="form-control" id="inputAddress" placeholder="Date of Birth">
+  </div>
+  <div class="form-group">
+    <label for="inputAddress">Date of joined</label>
+    <input type="text" name="joindate" class="form-control" id="inputAddress" placeholder="Date of joined">
   </div>
   <div class="form-group">
     <label for="inputAddress2">Experience</label>

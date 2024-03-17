@@ -98,9 +98,16 @@ if (isset($_REQUEST["submit"])) {
       <li class="nav-item">
         <a class="nav-link" href="members.php">Members</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="Receptionist.php">Receptionist</a>
-      </li>
+      <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMembers" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Receptionist
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMembers">
+                    <a class="dropdown-item" href="receptionist-details.php">View Receptionist</a>
+                    
+                    <!-- Add more dropdown items as needed -->
+                </div>
+            </li>
       <li class="nav-item">
         <a class="nav-link" href="logout.php">logout</a>
       </li>
